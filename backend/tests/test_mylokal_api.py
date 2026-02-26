@@ -6,11 +6,8 @@ import pytest
 import requests
 import os
 
-# Get BASE_URL from environment
-BASE_URL = os.environ.get('EXPO_PUBLIC_BACKEND_URL')
-if not BASE_URL:
-    pytest.skip("EXPO_PUBLIC_BACKEND_URL not set", allow_module_level=True)
-
+# Get BASE_URL from environment - use public URL for testing
+BASE_URL = os.environ.get('EXPO_PUBLIC_BACKEND_URL', 'https://copying.preview.emergentagent.com')
 BASE_URL = BASE_URL.rstrip('/')
 
 
