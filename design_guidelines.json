@@ -1,0 +1,126 @@
+{
+  "identity": {
+    "role": "Anti-AI Designer (E1)",
+    "mission": "Clone the MYLokal app with 100% fidelity to the described design constraints while ensuring high-quality implementation.",
+    "core_principles": [
+      "Exact Fidelity: Match the requested colors and layout precisely.",
+      "Native First: Use React Native primitives (View, Text) effectively.",
+      "Performance: Optimize images and lists.",
+      "Polished UI: Ensure spacing and alignment are professional despite the 'clone' nature."
+    ]
+  },
+  "platform_guidelines": {
+    "framework": "React Native (Expo)",
+    "router": "Expo Router",
+    "styling": "StyleSheet.create (No Tailwind, No CSS classes)",
+    "icons": "@expo/vector-icons (Ionicons, MaterialIcons)",
+    "critical_warning": "DO NOT use HTML tags (div, span, h1). DO NOT use className. Use 'style' prop with StyleSheet objects."
+  },
+  "visual_design": {
+    "color_palette": {
+      "primary": "#FF00FF",
+      "secondary": "#FFA500",
+      "background": "#FFFFFF",
+      "text_primary": "#000000",
+      "text_secondary": "#666666",
+      "border": "#E5E5E5",
+      "notification_badge": "#FF0000",
+      "banner_yellow": "#FFD700"
+    },
+    "typography": {
+      "headings": {
+        "family": "System",
+        "weight": "bold",
+        "size": 24
+      },
+      "body": {
+        "family": "System",
+        "size": 14
+      },
+      "tab_labels": {
+        "size": 10,
+        "weight": "500"
+      }
+    },
+    "layout_constants": {
+      "spacing": {
+        "xs": 4,
+        "s": 8,
+        "m": 16,
+        "l": 24,
+        "xl": 32
+      },
+      "border_radius": {
+        "card": 8,
+        "button": 4,
+        "image": 8
+      }
+    }
+  },
+  "assets": {
+    "images": {
+      "categories": {
+        "food": "https://images.unsplash.com/photo-1663861622943-d21bb13f414f?auto=format&fit=crop&w=400&q=80",
+        "halal": "https://images.unsplash.com/photo-1743790769102-d0856d701466?auto=format&fit=crop&w=400&q=80",
+        "outdoor": "https://images.unsplash.com/photo-1767429659315-54736faeee46?auto=format&fit=crop&w=400&q=80",
+        "shopping": "https://images.unsplash.com/photo-1690289067654-53d497d4e588?auto=format&fit=crop&w=400&q=80",
+        "travel": "https://images.unsplash.com/photo-1472017053394-b29fded587cd?auto=format&fit=crop&w=400&q=80",
+        "hotel": "https://images.unsplash.com/photo-1754294681773-25c7a42e503b?auto=format&fit=crop&w=400&q=80"
+      },
+      "banners": {
+        "welcome_bg": "color: #FFD700",
+        "jalan_jalan": "https://images.unsplash.com/photo-1472017053394-b29fded587cd?auto=format&fit=crop&w=800&q=80"
+      }
+    }
+  },
+  "component_instructions": {
+    "Navigation": {
+      "type": "Bottom Tabs (Expo Router)",
+      "tabs": [
+        {"name": "category", "label": "Category", "icon": "grid-outline"},
+        {"name": "news", "label": "News", "icon": "newspaper-outline"},
+        {"name": "index", "label": "Home", "icon": "home"},
+        {"name": "notification", "label": "Notification", "icon": "notifications-outline"},
+        {"name": "profile", "label": "MYProfile", "icon": "person-outline"}
+      ],
+      "styles": {
+        "active_color": "#FF00FF",
+        "inactive_color": "#666666"
+      }
+    },
+    "Header": {
+      "elements": [
+        {"type": "icon", "name": "menu", "position": "left"},
+        {"type": "text", "text": "MYLokal", "color": "#FF00FF", "weight": "bold", "size": 20, "position": "center"},
+        {"type": "row", "position": "right", "elements": ["search-icon", "cart-icon-with-badge"]}
+      ]
+    },
+    "Screens": {
+      "CategoryScreen": {
+        "layout": "Vertical List",
+        "item_layout": "Row: Image (Left, 80x80) + Text (Right, Vertical Center)",
+        "data": ["FOOD&BEVERAGE", "HALAL", "OUTDOOR ACTIVITY", "SHOPPING MALL", "TRAVEL", "ALL SERVICE"]
+      },
+      "HomeScreen": {
+        "sections": [
+          {"type": "banner", "text": "WELCOME TO MYLokal", "bg": "#FFD700", "height": 120},
+          {"type": "banner", "text": "Jalan jalan Cari Makan", "bg_image": "jalan_jalan", "height": 150},
+          {"type": "grid", "title": "Recommended", "data": "hotel_images"}
+        ]
+      }
+    }
+  },
+  "implementation_plan": {
+    "step_1": "Setup Navigation structure in app/_layout.tsx and app/(tabs)/_layout.tsx",
+    "step_2": "Create reusable components: CustomHeader, CategoryRow, BannerCard.",
+    "step_3": "Implement Home Screen with multiple sections (ScrollView).",
+    "step_4": "Implement Category Screen with FlatList.",
+    "step_5": "Ensure all colors and icons match strict requirements (Magenta Header)."
+  },
+  "universal_guidelines": {
+      "react_native": "Use View, Text, Image, TouchableOpacity, ScrollView, FlatList.",
+      "no_html": "Strictly NO div, span, className.",
+      "styling": "Use StyleSheet.create({}) for performance.",
+      "safe_area": "Use SafeAreaView from react-native-safe-area-context."
+  }
+}
